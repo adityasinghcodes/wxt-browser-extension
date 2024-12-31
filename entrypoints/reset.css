@@ -1,0 +1,21 @@
+:root {
+	--zen-mode-status: "not-activated";
+}
+
+/* Only apply these styles when zen mode is activated */
+@media screen {
+	:root[style*="--zen-mode-status:activated"],
+	:root[style*="--zen-mode-status: activated"] {
+		#columns #secondary {
+			visibility: hidden !important;
+		}
+
+		@media (min-width: 768px) {
+			#columns #primary {
+				transform: translateX(-50%) !important;
+				position: relative !important;
+				left: 50% !important;
+			}
+		}
+	}
+}
